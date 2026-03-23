@@ -3,6 +3,7 @@
 A movie search engine built with Flask that combines information retrieval techniques with ranking algorithms to deliver relevant search results.
 
 ## Live Demo
+![Live-Demo](Demo-Images/Movie-Search-Demo.gif)
 
 ## Spell Correction
 ![Spell-Correction-Demo](Demo-Images/Spell-Correction-Demo.png)
