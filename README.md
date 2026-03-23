@@ -5,10 +5,10 @@ A movie search engine built with Flask that combines information retrieval techn
 ## Live Demo
 
 ## Spell Correction
-![Spell-Correction-Demo](Demo-Images/Spell-Correction-Demo)
+![Spell-Correction-Demo](Demo-Images/Spell-Correction-Demo.png)
 
 ## Autocomplete
-![Autocomplete-Demo](Demo-Images/Autocomplete-Demo)
+![Autocomplete-Demo](Demo-Images/Autocomplete-Demo.png)
 
 ## Features
 - **Inverted Index**: Fast O(1) lookup of movies by keywords using an inverted index data structure
