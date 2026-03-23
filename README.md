@@ -9,14 +9,7 @@ A movie search engine built with Flask that combines information retrieval techn
 - **Tree-based Autocomplete**: Efficient prefix-based suggestions as users type
 - **Spell Checking**: Intelligent typo correction using modified DFS on tree with edit distance constraints (up to 3 edits)
 - **JSON Caching**: Inverted index and tree are cached to JSON for fast reloads
-
-
-### Ranking
-Results are ranked based on a weighted combination of factors:
-- **70% Relevance**: TF-IDF score with 10x boost for title matches vs description matches
-- **10% Popularity**: Trending score from The Movie Database (TMDb)
-- **10% Rating**: User review scores (0-10 scale)
-- **10 Budget**: Production budget (indicates major studio releases)
+- **Flask Frontend**: Minimal but effective UI for search and results.
 
 ### Algorithm:
 1. Splits query into tokens
@@ -25,15 +18,29 @@ Results are ranked based on a weighted combination of factors:
 4. Ranks based on TF-IDF and 10x weight for token in title vs description
 5. Takes top 20 candidates
 4. Normalizes all factors(rating, popularity, etc.) to 0-100 scale and does weighted average.
-5. Takes final top 10 in ranked order. 
+5. Takes final top 10 in ranked order.
 
-## Getting Started
+### Spell Checking Algorithm
+The spell checker uses a modified DFS on the tree that tracks edit distance:
+- **Substitution**: Replace character (distance: 1)
+- **Deletion**: Remove character (distance: 1)
+- **Insertion**: Add character (distance: 1)
+It automatically prunes branches with edit distance more than a specified threshold, and returns potential spell corrections from the inverted index.
 
-### Prerequisites
+### Weighting
+Results are ranked based on a weighted combination of factors:
+- **70% Relevance**: TF-IDF score with 10x boost for title matches vs description matches
+- **10% Popularity**: Trending score from The Movie Database (TMDb)
+- **10% Rating**: User review scores (0-10 scale)
+- **10 Budget**: Production budget (indicates major studio releases)
+
+
+### Installation & Setup
+
+## Prerequisites
 - Python 3.7+
 - pip
 
-### Installation
 
 1. Clone the repository
 ```bash
